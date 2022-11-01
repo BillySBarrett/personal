@@ -2,16 +2,10 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-    const [data, setData] = useState(null); 
-    useEffect(() => {
-        fetch("/api/hello")
-            .then((res) => res.json())
-            .then((data) => setData(data.name));
-    }, []);
 
     return (
         <div className="min-w-screen min-h-screen justify-center flex flex-col items-center">
-            <p className="font-extralight relative right-20">i know it's cliche but</p>
+            <p className="font-extralight relative right-20">{"i know it's cliche but"}</p>
             <div className="font-bold text-3xl">
                 {/* Text wheel with hello in different languages */ }
                 <TextWheel
