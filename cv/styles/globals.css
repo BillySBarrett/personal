@@ -25,20 +25,26 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(-45deg, #d9f3fc, #cefff4, #f5dbff, #fad3f4);
+    background: radial-gradient( #d9f3fc, #d1fef4, #f5dbff, #fad3f4);
     background-size: 400% 400%;
-    animation: gradient 12s ease infinite;
+    animation: gradient 20s ease infinite;
     z-index: -1;
 }
 
 @keyframes gradient {
     0% {
-        background-position: 0% 50%;
+        background-position: 0% 0%;
+    }
+    25% {
+      background-position: 50% 100%;
     }
     50% {
+        background-position: 100% 100%;
+    }
+    75% {
         background-position: 100% 50%;
     }
     100% {
-        background-position: 0% 50%;
+      background-position: 0% 0%;
     }
 }
