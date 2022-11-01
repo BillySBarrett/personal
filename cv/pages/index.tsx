@@ -2,8 +2,16 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
+    const [data, setData] = useState(null); 
+    useEffect(() => {
+        fetch("/api/hello")
+            .then((res) => res.json())
+            .then((data) => setData(data.name));
+    }, []);
+
     return (
         <div className="min-w-screen min-h-screen justify-center flex flex-col items-center">
+            <p className="font-extralight relative right-20">i know it's cliche but</p>
             <div className="font-bold text-3xl">
                 {/* Text wheel with hello in different languages */ }
                 <TextWheel
@@ -30,10 +38,11 @@ export default function Home() {
                         "Saluton"
                     ]}
                 />
-                <p className="font-extralight text-4xl"> Jeg heter <span className="font-bold ">Billy</span>.</p>
+                <p className="font-extralight text-4xl"> my name is <span className="font-bold ">billy..</span></p>
             </div>
+            <p className="font-extralight text-xl relative left-20 pt-4">tell me something i know nothing about</p>
             <div className="flex flex-col items-center pt-12 text-2xl">
-                <p className="font-light pb-2">Hva jeg anbefaler for tiden</p>
+                <p className="font-extralight">songs and albums picked with love {"<3"}</p>
                 <RandomMusicVideo />
             </div>
         </div>
@@ -54,7 +63,7 @@ const TextWheel = ({ textArray }: { textArray: Array<string>}) => {
       }
     setTimeout(() => {changeText()}, 4000);
     return (
-        <div className="text-3xl font-medium">
+        <div className="">
             <p>{textWheel}!</p>
         </div>
     )
@@ -81,7 +90,7 @@ const RandomMusicVideo = () => {
   }, []);
 
   return (
-    <div className="font-semibold flex flex-col p-10">
+    <div className="font-semibold flex flex-col pt-2">
       <Link href={musicVideos[randomNumber].url}>{musicVideos[randomNumber].title}</Link>
       {/* refresh music button */}
       <button onClick={() => setRandomNumber(Math.floor(Math.random() * musicVideos.length))}>🔁</button>
