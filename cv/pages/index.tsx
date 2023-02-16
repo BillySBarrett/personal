@@ -5,13 +5,12 @@ export default function Home() {
 
     return (
         <div className="min-w-screen min-h-screen justify-center flex flex-col items-center">
-            <p className="font-extralight relative right-20">{"i know it's cliche but"}</p>
+            <p className="font-extralight relative right-20">{"hello in different languages .."}</p>
             <div className="font-bold text-3xl">
-                {/* Text wheel with hello in different languages */ }
                 <TextWheel
                     textArray={[
-                        "Hei",
                         "Hola",
+                        "Hei",
                         "Hello",
                         "Bonjour",
                         "Ciao",
@@ -27,14 +26,11 @@ export default function Home() {
                         "Ahoj",
                         "Zdravo",
                         "Sveiki",
-                        "Szia",
-                        "Hei",
-                        "Saluton"
                     ]}
                 />
                 <p className="font-extralight text-4xl"> my name is <span className="font-bold ">billy..</span></p>
             </div>
-            <p className="font-extralight text-xl relative left-20 pt-4">tell me something i know nothing about</p>
+            <p className="font-extralight text-xl relative left-20 pt-4">i do some software engineering</p>
             <div className="flex flex-col items-center pt-12 text-2xl">
                 <p className="font-extralight">songs and albums picked with love {"<3"}</p>
                 <RandomMusicVideo />
